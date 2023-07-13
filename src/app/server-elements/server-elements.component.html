@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+    <div class="panel-heading" #heading>{{element.name}}</div>
+    <div class="panel-body">
+        <!-- Using @input -->
+        <!-- <p>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{element.content}}</strong>
+            <em *ngIf="element.type === 'blueprint'" style="color: blue">{{element.content}}</em>
+        </p> -->
+        <!-- Commented above one because we are trying to use <ng-content>  above code is in app.compnent.html-->
+        <ng-content></ng-content>
+    </div>
+</div>

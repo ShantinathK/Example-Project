@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p style="color: blue">Add new servers</p>
+        <!-- Using @outPut  == 2 way binding -->
+        <!-- <label>Server Name</label>
+        <input type="text" class="form-control" [(ngModel)]="newServerName">
+        <label>Server Content</label>
+        <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+
+        <!-- ----------------------------------------------------------------------------------------- -->
+
+        <!-- Using Local reference -->
+        <!-- <label>Server Name</label>
+        <input type="text" class="form-control" #serverNameInput>
+        <label>Server Content</label>
+        <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+
+        <!-- ----------------------------------------------------------------------------------------- -->
+
+
+        <!-- using @ViewChild() -->
+        <label>Server Name</label>
+        <input type="text" class="form-control" #serverNameInput>
+        <label>Server Content</label>
+        <input type="text" class="form-control" #serverContentInput>
+
+
+        <br>
+        <!-- Using 2 way binding -->
+        <!-- <button 
+        class="btn btn-primary" 
+        (click)="onAddServer()">Add Server</button> -->
+
+        <!-- Using local refernce -->
+        <!-- <button 
+        class="btn btn-primary" 
+        (click)="onAddServer(serverNameInput)">Add Server</button> -->
+
+        <!-- Using @ViewChild() decorstive -->
+        <button 
+        class="btn btn-primary" 
+        (click)="onAddServer(serverNameInput)">Add Server</button>
+
+        <!-- Using 2 way binding -->
+        <!-- <button 
+        class="btn btn-primary" 
+        (click)="onAddBluePrint()">Add blueprint</button> -->
+
+        <!-- Using local refernce -->
+        <!-- <button 
+        class="btn btn-primary" 
+        (click)="onAddBluePrint(serverNameInput)">Add blueprint</button> -->
+
+
+        <!-- using @VeiwChaild() -->
+        <button 
+        class="btn btn-primary" 
+        (click)="onAddBluePrint(serverNameInput)">Add blueprint</button>
+    </div>
+</div>

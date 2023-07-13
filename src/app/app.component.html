@@ -1,0 +1,27 @@
+
+<router-outlet></router-outlet>
+<div class="container">
+  <app-cockpit
+  (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
+  <hr>
+  <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="onDestroy()">Destroy</button>
+        <app-server-elements 
+          *ngFor="let serverelement of serverElements"
+          [element]="serverelement">
+          <!-- Using ng-Content  below code is from server-elements.compnent.html -->
+          <p #contentChild> <!--  For @ContentChild -->
+            <strong *ngIf="serverelement.type === 'server'" style="color: red">{{serverelement.content}}</strong>
+            <em *ngIf="serverelement.type === 'blueprint'" style="color: blue">{{serverelement.content}}</em>
+          </p>
+        </app-server-elements>
+      </div>
+  </div>
+  <!-- Using Created own attribute Directive just like [ngClass] or [ngStyle] -->
+  <input type="text" (input)="onInput($event)" [(ngModel)]="serveName">
+  <P appBasicHighligth>Using basic Directive Created {{serveName}}</P>
+  <!-- Using Created own attribute Directive by using Renderer2 just like [ngClass] or [ngStyle] -->
+  <P appBetterHighlight [defaultColor] = "'yellow'"[highlightColor] = "'red'" >Using Directive created using Renderer2 {{serveName}}</P>
+</div>
