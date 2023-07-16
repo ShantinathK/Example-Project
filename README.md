@@ -1,2 +1,2 @@
 # Example-Project
-Go to sub branch for code.
+Go to sub branch for code -Directives.
